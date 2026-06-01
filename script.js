@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('.snap-section');
     const navBtns = document.querySelectorAll('.nav-btn');
-    const nextBtn = document.getElementById('nextBtn');
-    const prevBtn = document.getElementById('prevBtn');
     const scrollContainer = document.querySelector('.main-content-scrollable');
 
     // Helper: Get current visible section index
@@ -33,34 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Scroll to a specific section
-    function scrollToSection(index) {
-        if (index >= 0 && index < sections.length) {
-            sections[index].scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    }
-
-    // Next button
-    if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
-            const currentIndex = getCurrentSectionIndex();
-            if (currentIndex < sections.length - 1) {
-                scrollToSection(currentIndex + 1);
-            }
-        });
-    }
-
-    // Previous button
-    if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
-            const currentIndex = getCurrentSectionIndex();
-            if (currentIndex > 0) {
-                scrollToSection(currentIndex - 1);
-            }
-        });
-    }
-
-    // Handle nav button clicks – scroll to the matching section
+    // Handle sidebar button clicks – smooth scroll to section
     navBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             const sectionId = btn.getAttribute('data-section');
