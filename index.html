@@ -7,111 +7,137 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo">
-                <h1>Arjun Amgain</h1>
-                <p>BSc IT Student | Aspiring Developer</p>
+    <div class="cv-container">
+        <!-- Sidebar (left column on laptop, top on mobile) -->
+        <aside class="sidebar">
+            <div class="profile-photo">
+                <img src="WhatsApp Image 2026-06-01 at 10.55.12 AM.jpeg" alt="Arjun Amgain">
             </div>
-            <nav class="nav-links">
-                <button class="nav-btn active" data-page="about">📖 About Me</button>
-                <button class="nav-btn" data-page="personal">👤 Personal Info</button>
+            <h1>Arjun Amgain</h1>
+            <p class="subtitle">BSc IT Student | Aspiring Developer</p>
+            <div class="contact-details">
+                <p>📧 <a href="mailto:amgainarjun44@gmail.com">amgainarjun44@gmail.com</a></p>
+                <p>🔗 <a href="https://github.com/itsarjun83" target="_blank">github.com/itsarjun83</a></p>
+                <p>📍 Chabahil, Kathmandu, Nepal</p>
+            </div>
+            <nav class="sidebar-nav">
+                <button class="nav-btn active" data-page="about">👤 About Me</button>
+                <button class="nav-btn" data-page="personal">📋 Personal Info</button>
                 <button class="nav-btn" data-page="skills">⚙️ Skills</button>
                 <button class="nav-btn" data-page="education">🎓 Education</button>
-                <button class="nav-btn" data-page="hobbies">🎮 Hobbies</button>
+                <button class="nav-btn" data-page="hobbies">🎯 Hobbies</button>
             </nav>
-        </header>
+        </aside>
 
-        <main>
+        <!-- Main content area -->
+        <main class="main-content">
             <!-- ABOUT PAGE -->
-            <div id="about" class="page active-page">
-                <div class="profile-row">
-                    <div class="profile-img">
-                        <img src="WhatsApp Image 2026-06-01 at 10.55.12 AM.jpeg" alt="Arjun Amgain photo">
-                    </div>
-                    <div class="intro-text">
-                        <h2>Hi, I'm <span class="highlight">Arjun Amgain</span></h2>
-                        <p>I am a passionate and disciplined BSc IT student currently studying at <strong>International School of Management and Science (ISM&T)</strong>, Kathmandu. I love building websites, solving problems with code, and constantly learning new technologies. Though I don't have formal work experience yet, I have built several small web projects and continue to improve my programming skills daily.</p>
-                        <p>Originally from Gorkha (Ajirkot), now based in Chabahil, Kathmandu. My routine includes coding, gym, and reading – a balance that keeps me focused and healthy.</p>
-                        <a href="https://github.com/itsarjun83" target="_blank" class="btn-github">🔗 View GitHub Profile</a>
-                    </div>
+            <section id="about" class="page active-page">
+                <h2>About Me</h2>
+                <div class="about-text">
+                    <p>I am a disciplined and motivated <strong>BSc IT student</strong> currently studying at <strong>ISMT College (International School of Management and Technology)</strong>, Kathmandu. Originally from Gorkha (Ajirkot Ward No. 5), I now reside in Chabahil, balancing academics with self‑taught programming and web development.</p>
+                    <p>Though I have no formal work experience, I have built several personal web projects using HTML, CSS, JavaScript, and basics of C/C++/C#/Python. I am eager to apply my analytical mindset, quick learning ability, and passion for clean code in an internship or junior developer role.</p>
+                    <p>Outside of coding, I maintain discipline through gym training and reading books – habits that keep me focused and healthy.</p>
                 </div>
-            </div>
+                <div class="mini-stats">
+                    <div class="stat">🎂 21 years old</div>
+                    <div class="stat">💻 5+ languages learned</div>
+                    <div class="stat">🏋️ Gym enthusiast</div>
+                </div>
+            </section>
 
             <!-- PERSONAL INFO PAGE -->
-            <div id="personal" class="page">
-                <h2>📌 Personal Information</h2>
+            <section id="personal" class="page">
+                <h2>Personal Information</h2>
                 <div class="info-grid">
-                    <div class="card"><h3>Full Name</h3><p>Arjun Amgain</p></div>
-                    <div class="card"><h3>Gender</h3><p>Male</p></div>
-                    <div class="card"><h3>Date of Birth (AD)</h3><p>16 September 2004</p></div>
-                    <div class="card"><h3>Date of Birth (BS)</h3><p>2061-05-31 B.S.</p></div>
-                    <div class="card"><h3>Permanent Address</h3><p>Ward No. 5, Ajirkot, Gorkha, Nepal</p></div>
-                    <div class="card"><h3>Current Address</h3><p>Chabahil, Kathmandu, Nepal</p></div>
-                    <div class="card"><h3>Email</h3><p><a href="mailto:amgainarjun44@gmail.com">amgainarjun44@gmail.com</a></p></div>
-                    <div class="card"><h3>GitHub</h3><p><a href="https://github.com/itsarjun83" target="_blank">github.com/itsarjun83</a></p></div>
-                    <div class="card"><h3>Languages Spoken</h3><p>Nepali (Native), English (Working proficiency)</p></div>
+                    <div class="info-card"><strong>Full Name</strong><br>Arjun Amgain</div>
+                    <div class="info-card"><strong>Gender</strong><br>Male</div>
+                    <div class="info-card"><strong>Date of Birth (AD)</strong><br>16 September 2004</div>
+                    <div class="info-card"><strong>Date of Birth (BS)</strong><br>2061-05-31 B.S.</div>
+                    <div class="info-card"><strong>Permanent Address</strong><br>Ward No. 5, Ajirkot, Gorkha, Nepal</div>
+                    <div class="info-card"><strong>Current Address</strong><br>Chabahil, Kathmandu, Nepal</div>
+                    <div class="info-card"><strong>Languages</strong><br>Nepali (Native), English (Fluent)</div>
+                    <div class="info-card"><strong>GitHub</strong><br><a href="https://github.com/itsarjun83" target="_blank">itsarjun83</a></div>
                 </div>
-            </div>
+            </section>
 
             <!-- SKILLS PAGE -->
-            <div id="skills" class="page">
-                <h2>💻 Technical & Professional Skills</h2>
-                <div class="skills-container">
-                    <div class="skill-category">
+            <section id="skills" class="page">
+                <h2>Technical & Professional Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-block">
                         <h3>Programming Languages</h3>
-                        <ul><li>C, C++, C#</li><li>Python (basic)</li><li>JavaScript (basic)</li><li>HTML5 & CSS3</li></ul>
+                        <ul>
+                            <li>C, C++, C#</li>
+                            <li>Python (basic)</li>
+                            <li>JavaScript (basic)</li>
+                            <li>HTML5 & CSS3</li>
+                        </ul>
                     </div>
-                    <div class="skill-category">
+                    <div class="skill-block">
                         <h3>Web Development</h3>
-                        <ul><li>Website building (responsive design)</li><li>VS Code / Visual Studio</li></ul>
+                        <ul>
+                            <li>Responsive website building</li>
+                            <li>VS Code / Visual Studio</li>
+                        </ul>
                     </div>
-                    <div class="skill-category">
+                    <div class="skill-block">
                         <h3>Office Tools</h3>
-                        <ul><li>MS Word</li><li>MS Excel</li><li>MS PowerPoint</li></ul>
+                        <ul>
+                            <li>MS Word, Excel, PowerPoint</li>
+                        </ul>
                     </div>
-                    <div class="skill-category">
+                    <div class="skill-block">
                         <h3>Development Environments</h3>
-                        <ul><li>Visual Studio</li><li>VS Code</li></ul>
+                        <ul>
+                            <li>Visual Studio</li>
+                            <li>VS Code</li>
+                        </ul>
                     </div>
                 </div>
-                <p class="note">⭐ Continuously learning and building projects – check my GitHub for progress.</p>
-            </div>
+                <p class="skill-note">⭐ Continuously learning – check my GitHub for ongoing projects.</p>
+            </section>
 
             <!-- EDUCATION PAGE -->
-            <div id="education" class="page">
-                <h2>🎓 Academic Journey</h2>
+            <section id="education" class="page">
+                <h2>Education</h2>
                 <div class="timeline">
-                    <div class="timeline-item">
+                    <div class="timeline-entry">
                         <div class="year">2021</div>
-                        <div class="desc"><strong>SEE (Secondary Education Examination)</strong><br>NOBS, Nepal</div>
+                        <div class="details">
+                            <strong>Secondary Education Examination (SEE)</strong><br>
+                            National Orchid Boarding High School, Lampokhari, Chabahil, Nepal
+                        </div>
                     </div>
-                    <div class="timeline-item">
+                    <div class="timeline-entry">
                         <div class="year">2024</div>
-                        <div class="desc"><strong>Higher Secondary (+2 / SLC)</strong><br>Texas International College, Science stream</div>
+                        <div class="details">
+                            <strong>Higher Secondary (+2 / Science)</strong><br>
+                            Texas International College, Nepal
+                        </div>
                     </div>
-                    <div class="timeline-item">
+                    <div class="timeline-entry">
                         <div class="year">2024 – Present</div>
-                        <div class="desc"><strong>Bachelor of Science in Information Technology (BSc IT)</strong><br>International School of Management and Science (ISM&T), Kathmandu<br><em>Expected graduation: 2027</em></div>
+                        <div class="details">
+                            <strong>Bachelor of Science in Information Technology (BSc IT)</strong><br>
+                            ISMT College (International School of Management and Technology), Kathmandu<br>
+                            <em>Expected graduation: 2027</em>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- HOBBIES PAGE -->
-            <div id="hobbies" class="page">
-                <h2>🎯 Hobbies & Interests</h2>
-                <div class="hobby-grid">
-                    <div class="hobby-card">🎮 Playing video games (strategy & logic building)</div>
-                    <div class="hobby-card">🏋️ Gym & fitness training (consistency & self-discipline)</div>
-                    <div class="hobby-card">📚 Reading books (academic & self-improvement)</div>
-                    <div class="hobby-card">💻 Coding side projects & exploring new tech</div>
+            <section id="hobbies" class="page">
+                <h2>Hobbies & Interests</h2>
+                <div class="hobbies-grid">
+                    <div class="hobby">🎮 Strategy video games</div>
+                    <div class="hobby">🏋️ Gym & fitness training</div>
+                    <div class="hobby">📚 Reading books (academic & self-improvement)</div>
+                    <div class="hobby">💻 Coding side projects</div>
                 </div>
-            </div>
+            </section>
         </main>
-
-        <footer>
-            <p>© 2026 Arjun Amgain – Built with responsive design | <a href="mailto:amgainarjun44@gmail.com">amgainarjun44@gmail.com</a></p>
-        </footer>
     </div>
 
     <script src="script.js"></script>
