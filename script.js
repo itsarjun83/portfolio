@@ -1,19 +1,13 @@
-// Page navigation logic
 document.addEventListener('DOMContentLoaded', () => {
-    const navBtns = document.querySelectorAll('.nav-btn');
+    const navButtons = document.querySelectorAll('.nav-btn');
     const pages = document.querySelectorAll('.page');
 
-    function switchPage(pageId) {
-        // Hide all pages
-        pages.forEach(page => {
-            page.classList.remove('active-page');
-        });
-        // Show selected page
-        const activePage = document.getElementById(pageId);
-        if (activePage) activePage.classList.add('active-page');
+    function showPage(pageId) {
+        pages.forEach(page => page.classList.remove('active-page'));
+        const targetPage = document.getElementById(pageId);
+        if (targetPage) targetPage.classList.add('active-page');
 
-        // Update active button style
-        navBtns.forEach(btn => {
+        navButtons.forEach(btn => {
             const btnPage = btn.getAttribute('data-page');
             if (btnPage === pageId) {
                 btn.classList.add('active');
@@ -23,19 +17,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    navBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
+    navButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
             const pageId = btn.getAttribute('data-page');
-            if (pageId) switchPage(pageId);
+            if (pageId) showPage(pageId);
         });
     });
 
-    // Set default (in case of any mismatch)
-    const currentActive = document.querySelector('.nav-btn.active');
-    if (currentActive) {
-        const defaultPage = currentActive.getAttribute('data-page');
-        switchPage(defaultPage);
+    // Ensure default active page
+    const activeBtn = document.querySelector('.nav-btn.active');
+    if (activeBtn) {
+        const defaultPage = activeBtn.getAttribute('data-page');
+        showPage(defaultPage);
     } else {
-        switchPage('about');
+        showPage('about');
     }
 });
