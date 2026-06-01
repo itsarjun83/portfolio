@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="cv-container">
-        <!-- Sidebar (left column on laptop, top on mobile) -->
+        <!-- Sidebar -->
         <aside class="sidebar">
             <div class="profile-photo">
                 <img src="WhatsApp Image 2026-06-01 at 10.55.12 AM.jpeg" alt="Arjun Amgain">
@@ -93,7 +93,9 @@
             <section id="contact" class="snap-section" data-section="contact">
                 <h2>Get In Touch</h2>
                 <p class="contact-intro">If you have any opportunity, question, or just want to say hello, fill out the form below. I'll get back to you as soon as possible.</p>
-                <form action="contact.php" method="POST" class="contact-form">
+                
+                <!-- Formspree form (free, sends email to you) -->
+                <form id="contactForm" action="https://formspree.io/f/xgvoryrp" method="POST" class="contact-form">
                     <div class="form-group">
                         <label for="name">Full Name *</label>
                         <input type="text" id="name" name="name" required>
@@ -108,11 +110,70 @@
                     </div>
                     <button type="submit" class="submit-btn">Send Message</button>
                 </form>
-                <div class="contact-note">📌 Your name will be stored in my secure database. No spam, ever.</div>
+                <div id="formResponse" class="contact-note"></div>
             </section>
         </main>
     </div>
 
     <script src="script.js"></script>
+    <!-- Sweet thank you message using JavaScript (AJAX) -->
+    <script>
+        (function() {
+            const form = document.getElementById('contactForm');
+            const responseDiv = document.getElementById('formResponse');
+            
+            if (form) {
+                form.addEventListener('submit', async function(e) {
+                    e.preventDefault(); // prevent page reload
+                    
+                    const formData = new FormData(form);
+                    const submitBtn = form.querySelector('.submit-btn');
+                    const originalText = submitBtn.textContent;
+                    submitBtn.textContent = 'Sending...';
+                    submitBtn.disabled = true;
+                    
+                    try {
+                        const response = await fetch(form.action, {
+                            method: 'POST',
+                            body: formData,
+                            headers: { 'Accept': 'application/json' }
+                        });
+                        
+                        if (response.ok) {
+                            // Show beautiful thank you message
+                            responseDiv.innerHTML = `
+                                <div style="background:#d4edda; border-left:4px solid #28a745; padding:1rem; border-radius:16px; margin-top:1rem; text-align:center;">
+                                    <strong>🙏 Thank You, ${formData.get('name')}!</strong><br>
+                                    Your message has been sent. I will reply within 24 hours.
+                                </div>
+                            `;
+                            form.reset(); // clear form
+                            responseDiv.style.color = '#155724';
+                        } else {
+                            const errorData = await response.json();
+                            responseDiv.innerHTML = `
+                                <div style="background:#f8d7da; border-left:4px solid #dc3545; padding:1rem; border-radius:16px; margin-top:1rem; text-align:center;">
+                                    ❌ Oops! Something went wrong. Please try again or email me directly at amgainarjun44@gmail.com
+                                </div>
+                            `;
+                        }
+                    } catch (error) {
+                        responseDiv.innerHTML = `
+                            <div style="background:#f8d7da; border-left:4px solid #dc3545; padding:1rem; border-radius:16px; margin-top:1rem; text-align:center;">
+                                ❌ Network error. Please check your connection or email me directly.
+                            </div>
+                        `;
+                    } finally {
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                        // Auto-hide message after 6 seconds
+                        setTimeout(() => {
+                            responseDiv.innerHTML = '';
+                        }, 6000);
+                    }
+                });
+            }
+        })();
+    </script>
 </body>
 </html>
