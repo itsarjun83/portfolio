@@ -1,1 +1,3 @@
-
+git remote add origin https://github.com/sanamsitoula/sanamsitoula-portfolio.git
+git branch -M master
+git push -u origin master
