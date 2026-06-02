@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const navBtns = document.querySelectorAll('.nav-btn');
     const scrollContainer = document.querySelector('.main-content-scrollable');
 
-    // Helper: Get current visible section index
     function getCurrentSectionIndex() {
         let currentIndex = 0;
         const containerTop = scrollContainer.scrollTop;
@@ -17,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return currentIndex;
     }
 
-    // Update active nav button based on scroll
     function updateActiveNav() {
         const currentIndex = getCurrentSectionIndex();
         const currentSectionId = sections[currentIndex].getAttribute('data-section');
@@ -31,7 +29,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Handle sidebar button clicks – smooth scroll to section
     navBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             const sectionId = btn.getAttribute('data-section');
@@ -42,11 +39,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Listen to scroll events to update active nav
     scrollContainer.addEventListener('scroll', () => {
         requestAnimationFrame(updateActiveNav);
     });
 
-    // Initial call
     updateActiveNav();
 });
