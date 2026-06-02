@@ -26,7 +26,7 @@ body {
     box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.2);
 }
 
-/* SIDEBAR (LEFT PANEL) */
+/* SIDEBAR */
 .sidebar {
     background: #0f2c39;
     color: #f0f3f5;
@@ -137,7 +137,6 @@ body {
     border-bottom: 1px solid #eee;
 }
 
-/* Headings inside snap sections */
 .snap-section h2 {
     font-size: 1.9rem;
     color: #0f2c39;
@@ -147,7 +146,6 @@ body {
     font-weight: 600;
 }
 
-/* About text */
 .about-text {
     line-height: 1.65;
     color: #2c3e44;
@@ -174,7 +172,6 @@ body {
     color: #b45f1b;
 }
 
-/* Info Grid (personal) */
 .info-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -200,7 +197,6 @@ body {
     text-decoration: none;
 }
 
-/* Skills Grid */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -238,7 +234,6 @@ body {
     font-style: italic;
 }
 
-/* Timeline (education) */
 .timeline {
     display: flex;
     flex-direction: column;
@@ -275,7 +270,6 @@ body {
     color: #0f2c39;
 }
 
-/* Hobbies Grid */
 .hobbies-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
